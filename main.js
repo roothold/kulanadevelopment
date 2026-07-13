@@ -162,3 +162,50 @@
     if (e.key === "Escape" && menu.classList.contains("open")) closeMenu();
   });
 })();
+
+/* Animated timeline: scroll-fill + node activation */
+(function () {
+  var tl = document.querySelector(".timeline");
+  if (!tl) return;
+  var fill = tl.querySelector(".timeline__fill");
+  var items = [].slice.call(tl.querySelectorAll(".tl-item"));
+  function upd() {
+    var r = tl.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var progressed = Math.min(Math.max(vh * 0.72 - r.top, 0), r.height);
+    if (fill) fill.style.height = progressed + "px";
+    items.forEach(function (it) {
+      if (it.getBoundingClientRect().top < vh * 0.78) it.classList.add("in");
+    });
+  }
+  window.addEventListener("scroll", upd, { passive: true });
+  window.addEventListener("resize", upd);
+  upd();
+})();
+
+/* Cinematic statement parallax */
+(function () {
+  var bgs = [].slice.call(document.querySelectorAll(".statement__bg"));
+  if (!bgs.length) return;
+  function upd() {
+    bgs.forEach(function (bg) {
+      var s = bg.closest(".statement").getBoundingClientRect();
+      var off = (window.innerHeight - s.top) * 0.05;
+      bg.style.transform = "translateY(" + (-off) + "px)";
+    });
+  }
+  window.addEventListener("scroll", upd, { passive: true });
+  upd();
+})();
+
+/* Newsletter capture (front-end demo) */
+(function () {
+  var f = document.querySelector("#newsletter-form");
+  if (!f) return;
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var n = f.querySelector(".nl-note");
+    if (n) { n.textContent = "Thank you — you're on the list. We'll keep you close to the vision."; n.style.display = "block"; }
+    f.reset();
+  });
+})();

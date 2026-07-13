@@ -89,3 +89,76 @@
     });
   }
 })();
+
+/* Scroll progress bar */
+(function () {
+  var bar = document.createElement("div");
+  bar.className = "scroll-progress";
+  document.body.appendChild(bar);
+  function upd() {
+    var h = document.documentElement;
+    var st = h.scrollTop || document.body.scrollTop;
+    var sh = (h.scrollHeight - h.clientHeight) || 1;
+    bar.style.width = (st / sh * 100) + "%";
+  }
+  window.addEventListener("scroll", upd, { passive: true });
+  window.addEventListener("resize", upd);
+  upd();
+})();
+
+/* Amenity gallery filtering */
+(function () {
+  var filters = document.querySelector(".amenity-filters");
+  if (!filters) return;
+  var tiles = [].slice.call(document.querySelectorAll(".afeat[data-cat]"));
+  filters.addEventListener("click", function (e) {
+    var b = e.target.closest(".afilter");
+    if (!b) return;
+    filters.querySelectorAll(".afilter").forEach(function (x) { x.classList.remove("active"); });
+    b.classList.add("active");
+    var cat = b.getAttribute("data-filter");
+    tiles.forEach(function (t) {
+      var cats = (t.getAttribute("data-cat") || "").split(" ");
+      var show = cat === "all" || cats.indexOf(cat) > -1;
+      t.classList.toggle("hide", !show);
+    });
+  });
+})();
+
+/* World-class mobile menu: logo, close button, CTA, Escape-to-close */
+(function () {
+  var menu = document.querySelector(".mobile-menu");
+  var burger = document.querySelector(".burger");
+  if (!menu) return;
+
+  var bar = document.createElement("div");
+  bar.className = "mm-top";
+  var logo = document.createElement("img");
+  logo.src = "logo.png";
+  logo.className = "mm-logo";
+  logo.alt = "Kulana Development";
+  var close = document.createElement("button");
+  close.className = "mm-close";
+  close.setAttribute("aria-label", "Close menu");
+  close.innerHTML = "<span></span><span></span>";
+  bar.appendChild(logo);
+  bar.appendChild(close);
+  menu.insertBefore(bar, menu.firstChild);
+
+  var cta = document.createElement("a");
+  cta.href = "contact.html";
+  cta.className = "mm-cta";
+  cta.textContent = "Start a Conversation";
+  menu.appendChild(cta);
+
+  function closeMenu() {
+    menu.classList.remove("open");
+    if (burger) burger.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+  close.addEventListener("click", closeMenu);
+  cta.addEventListener("click", closeMenu);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menu.classList.contains("open")) closeMenu();
+  });
+})();

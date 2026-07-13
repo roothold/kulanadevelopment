@@ -8,6 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta property="og:image" content="https://kulanadevelopment.vercel.app/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://kulanadevelopment.vercel.app/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://kulanadevelopment.vercel.app/og-image.jpg" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -66,9 +74,18 @@
 <!-- PHOTO MOSAIC GALLERY -->
 <section class="section" style="padding-top:0;">
   <div class="container">
+    <div class="amenity-filters reveal">
+      <button class="afilter active" data-filter="all">All</button>
+      <button class="afilter" data-filter="pools">Pools &amp; Water</button>
+      <button class="afilter" data-filter="wellness">Wellness</button>
+      <button class="afilter" data-filter="sport">Sport</button>
+      <button class="afilter" data-filter="social">Social</button>
+      <button class="afilter" data-filter="dining">Dining</button>
+      <button class="afilter" data-filter="golf">Golf</button>
+    </div>
     <div class="amenity-gallery reveal">
 
-      <a href="#" class="afeat big">
+      <a href="#" class="afeat big" data-cat="pools social">
         <img src="amenity-resort.jpg" alt="Resort amenity commons" />
         <div class="afeat__body">
           <span class="afeat__tag tag-teal">Resort Commons</span>
@@ -77,7 +94,7 @@
         </div>
       </a>
 
-      <a href="#" class="afeat tall">
+      <a href="#" class="afeat tall" data-cat="pools">
         <img src="amenity-pool2.jpg" alt="Resort pool" />
         <div class="afeat__body">
           <span class="afeat__tag tag-sky">Pools &amp; Water</span>
@@ -85,7 +102,7 @@
         </div>
       </a>
 
-      <a href="#" class="afeat">
+      <a href="#" class="afeat" data-cat="pools">
         <img src="amenity-pool.jpg" alt="Cabana pool deck" />
         <div class="afeat__body">
           <span class="afeat__tag tag-teal">Cabana Deck</span>
@@ -93,7 +110,7 @@
         </div>
       </a>
 
-      <a href="#" class="afeat">
+      <a href="#" class="afeat" data-cat="golf">
         <img src="amenity-golf.jpg" alt="Golf greens" />
         <div class="afeat__body">
           <span class="afeat__tag tag-forest">Golf &amp; Greens</span>
@@ -101,7 +118,7 @@
         </div>
       </a>
 
-      <a href="#" class="afeat">
+      <a href="#" class="afeat" data-cat="social">
         <img src="amenity-clubhouse.jpg" alt="Clubhouse" />
         <div class="afeat__body">
           <span class="afeat__tag tag-gold">Clubhouse</span>
@@ -109,7 +126,7 @@
         </div>
       </a>
 
-      <a href="#" class="afeat big">
+      <a href="#" class="afeat big" data-cat="social">
         <img src="amenity-social.jpg" alt="Sunset social recreation" />
         <div class="afeat__body">
           <span class="afeat__tag tag-coral">Social &amp; Events</span>
@@ -118,7 +135,7 @@
         </div>
       </a>
 
-      <a href="#" class="afeat tall">
+      <a href="#" class="afeat tall" data-cat="dining">
         <img src="amenity-dining.jpg" alt="Dining and retail plaza" />
         <div class="afeat__body">
           <span class="afeat__tag tag-coral">Dining &amp; Retail</span>
@@ -126,7 +143,7 @@
         </div>
       </a>
 
-      <a href="#" class="afeat">
+      <a href="#" class="afeat" data-cat="wellness">
         <img src="amenity-spa.jpg" alt="Spa and wellness pool" />
         <div class="afeat__body">
           <span class="afeat__tag tag-teal">Spa &amp; Wellness</span>
@@ -134,7 +151,7 @@
         </div>
       </a>
 
-      <a href="#" class="afeat">
+      <a href="#" class="afeat" data-cat="sport">
         <img src="amenity-pickleball.jpg" alt="Pickleball and racquet courts" />
         <div class="afeat__body">
           <span class="afeat__tag tag-sky">Racquet &amp; Sport</span>
@@ -142,7 +159,7 @@
         </div>
       </a>
 
-      <a href="#" class="afeat">
+      <a href="#" class="afeat" data-cat="social pools">
         <img src="amenity-beachclub.jpg" alt="Beach club and waterfront dining" />
         <div class="afeat__body">
           <span class="afeat__tag tag-gold">Beach Club</span>

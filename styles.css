@@ -424,3 +424,36 @@ h3 { font-size: clamp(1.4rem, 2.4vw, 2rem); }
   margin-top: 8px;
   padding-block: 26px;
 }
+
+/* ============================================================
+   LEGIBILITY & CONTRAST PASS (AA-oriented)
+   ============================================================ */
+:root { --muted: #5C5548; }                 /* darker body text for stronger contrast on light */
+
+/* Small accent text (eyebrows / arrow links): darker brass on light backgrounds */
+.eyebrow { color: #8A6220; }
+.eyebrow::before { background: #8A6220; }
+.link-arrow { color: #8A6220; }
+.link-arrow::after { background: #8A6220; }
+
+/* Restore light/appropriate accent on dark, photo, or colored backgrounds */
+.hero .eyebrow, .page-hero .eyebrow, .dark .eyebrow, .cta .eyebrow, .quote-band .eyebrow { color: var(--sand); }
+.hero .eyebrow::before, .page-hero .eyebrow::before, .dark .eyebrow::before, .cta .eyebrow::before, .quote-band .eyebrow::before { background: var(--sand); }
+.band-tropical .eyebrow { color: #ffffff; }
+.band-tropical .eyebrow::before { background: #ffffff; }
+.accent-teal .eyebrow { color: var(--teal-dk); }
+.accent-teal .eyebrow::before { background: var(--teal-dk); }
+.accent-teal .link-arrow { color: var(--teal-dk); }
+.accent-teal .link-arrow::after { background: var(--teal-dk); }
+
+/* Stronger hero overlay so light text stays legible over bright photos */
+.hero__media::after { background: linear-gradient(180deg, rgba(18,20,22,0.60) 0%, rgba(18,20,22,0.32) 40%, rgba(18,20,22,0.85) 100%); }
+.hero__lede { color: rgba(246,242,234,0.96); }
+
+/* Interior + dark section ledes a touch brighter */
+.page-hero .lede { color: rgba(246,242,234,0.90); }
+.dark .lede { color: rgba(246,242,234,0.90); }
+
+/* Footer legibility */
+.footer-bottom { color: rgba(246,242,234,0.72); }
+.footer-col a { color: rgba(246,242,234,0.82); }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Kulana Development</title>
+<meta name="description" content="Start a conversation with Kulana Development about your site, concept, or community." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .form-note { display:none; margin-top:18px; padding:16px 18px; background: var(--stone); border-radius: var(--radius); color: var(--ink); font-size:0.95rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header on-light">
+  <div class="container bar">
+    <a href="index.html" class="brand"><img src="logo.png" class="brand__logo logo-dark" alt="Kulana Development" /><img src="logo-light.png" class="brand__logo logo-light" alt="Kulana Development" /></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="approach.html">Approach</a>
+      <a href="amenities.html">Amenities</a>
+      <a href="team.html">Team</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="contact.html" class="header-cta">Start a Conversation</a>
+    <button class="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="approach.html">Approach</a>
+  <a href="amenities.html">Amenities</a>
+  <a href="team.html">Team</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="section" style="padding-top: 170px;">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="reveal">
+        <span class="eyebrow">Start a Conversation</span>
+        <h1 style="font-size:clamp(2.4rem,5vw,3.8rem); margin-top:20px;">Let's build something that lasts.</h1>
+        <p class="lede" style="margin-top:24px;">Tell us about your site, concept, or community goals. A principal will follow up personally.</p>
+
+        <div style="margin-top:44px;">
+          <div class="contact-detail">
+            <div class="k">Email</div>
+            <div class="v"><a href="mailto:hello@kulanadevelopment.com">hello@kulanadevelopment.com</a></div>
+          </div>
+          <div class="contact-detail">
+            <div class="k">New Development Inquiries</div>
+            <div class="v"><a href="mailto:development@kulanadevelopment.com">development@kulanadevelopment.com</a></div>
+          </div>
+          <div class="contact-detail">
+            <div class="k">Follow</div>
+            <div class="v" style="font-size:1rem; display:flex; gap:22px;"><a href="#">LinkedIn</a><a href="#">Instagram</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" data-delay="1">
+        <form id="inquiry-form" novalidate>
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:0 22px;">
+            <div class="field"><label for="fn">First Name</label><input id="fn" name="firstName" type="text" required /></div>
+            <div class="field"><label for="ln">Last Name</label><input id="ln" name="lastName" type="text" required /></div>
+          </div>
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:0 22px;">
+            <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" required /></div>
+            <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" type="tel" /></div>
+          </div>
+          <div class="field">
+            <label for="ty">Inquiry Type</label>
+            <select id="ty" name="type">
+              <option>New development opportunity</option>
+              <option>Land / site for review</option>
+              <option>Capital / investment partnership</option>
+              <option>General inquiry</option>
+            </select>
+          </div>
+          <div class="field"><label for="ms">Tell us about your project</label><textarea id="ms" name="message" placeholder="Location, size, stage, and what you're hoping to build..."></textarea></div>
+          <button type="submit" class="btn btn--solid" style="width:auto;">Send Inquiry <span class="arw">→</span></button>
+          <p class="form-note"></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" style="margin-top: var(--section);">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo-light.png" class="footer-logo" alt="Kulana Development" />
+        <p>Transforming concepts into high-performing assets with precision, integrity, and a commitment to long-term value.</p>
+      </div>
+      <div class="footer-col"><h4>Company</h4>
+        <a href="index.html">Home</a><a href="approach.html">Approach</a><a href="team.html">Management Team</a><a href="faq.html">FAQ</a>
+      </div>
+      <div class="footer-col"><h4>Explore</h4>
+        <a href="amenities.html">Amenities</a><a href="approach.html">Approach</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col"><h4>Connect</h4>
+        <a href="contact.html">Start a Conversation</a><a href="mailto:hello@kulanadevelopment.com">hello@kulanadevelopment.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Kulana Development. All rights reserved.</span>
+      <div class="socials"><a href="#">LinkedIn</a><a href="#">Instagram</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
